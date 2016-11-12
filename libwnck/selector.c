@@ -518,7 +518,7 @@ wnck_selector_item_new (WnckSelector *selector,
 {
   GtkWidget *item;
   static const GtkTargetEntry targets[] = {
-    { "application/x-wnck-window-id", 0, 0 }
+    { (gchar *) "application/x-wnck-window-id", 0, 0 }
   };
 
   item = wnck_image_menu_item_new_with_label (label);
