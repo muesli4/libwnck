@@ -1,8 +1,8 @@
 AC_PREREQ(2.62)
 
 m4_define([wnck_major_version], [3])
-m4_define([wnck_minor_version], [20])
-m4_define([wnck_micro_version], [2])
+m4_define([wnck_minor_version], [89])
+m4_define([wnck_micro_version], [0])
 m4_define([wnck_version],
           [wnck_major_version.wnck_minor_version.wnck_micro_version])
 
@@ -23,16 +23,16 @@ AX_CHECK_ENABLE_DEBUG([yes])
 dnl libtool versioning for libwnck
 
 dnl increment if the interface has additions, changes, removals.
-LIBWNCK_CURRENT=2
+LIBWNCK_CURRENT=0
 
 dnl increment any time the source changes; set to
 dnl  0 if you increment CURRENT
-LIBWNCK_REVISION=2
+LIBWNCK_REVISION=0
 
 dnl increment if any interfaces have been added; set to 0
 dnl  if any interfaces have been changed or removed. removal has
 dnl  precedence over adding, so set to 0 if both happened.
-LIBWNCK_AGE=2
+LIBWNCK_AGE=0
 
 AC_SUBST(LIBWNCK_CURRENT)
 AC_SUBST(LIBWNCK_REVISION)
@@ -71,7 +71,7 @@ AM_CONDITIONAL(ENABLE_TOOLS, test "x$enable_tools" != "xno")
 AM_GNU_GETTEXT_VERSION([0.19.4])
 AM_GNU_GETTEXT([external])
 
-GETTEXT_PACKAGE=libwnck-3.0
+GETTEXT_PACKAGE=libwnck-4.0
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Package name])
 
@@ -151,7 +151,7 @@ AC_SUBST(XLIB_CFLAGS)
 AC_SUBST(XLIB_LIBS)
 
 PKG_CHECK_MODULES([LIBWNCK],[
-	gtk+-3.0 >= 3.19.5
+	gtk+-4.0 >= 3.19.5
 	glib-2.0 >= 2.32
 	gobject-2.0 >= 2.13.0
 	$CAIRO_XLIB_XRENDER_PACKAGE
@@ -182,8 +182,8 @@ doc/Makefile
 po/Makefile.in
 libwnck/Makefile
 libwnck/version.h
-libwnck-3.0.pc
-libwnck-3.0-uninstalled.pc
+libwnck-4.0.pc
+libwnck-4.0-uninstalled.pc
 ])
 
 dnl ---------------------------------------------------------------------------

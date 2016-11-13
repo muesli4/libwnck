@@ -7,7 +7,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-introspection
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libwnck-3.0.pc
+pkgconfig_DATA = libwnck-4.0.pc
 
 EXTRA_DIST = \
 	HACKING		\
@@ -30,7 +30,7 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/po/boldquot.sed \
 	$(srcdir)/po/en@boldquot.header \
 	$(srcdir)/po/en@quot.header \
-	$(srcdir)/po/libwnck-3.0.pot \
+	$(srcdir)/po/libwnck-4.0.pot \
 	$(srcdir)/po/insert-header.sin \
 	$(srcdir)/po/quot.sed \
 	$(srcdir)/po/remove-potcdate.sin \

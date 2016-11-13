@@ -1,6 +1,6 @@
 NULL =
 
-lib_LTLIBRARIES = libwnck-3.la
+lib_LTLIBRARIES = libwnck-4.la
 bin_PROGRAMS =
 noinst_PROGRAMS =		\
 	test-pager		\
@@ -43,7 +43,7 @@ wnck_headers =			\
 	window-action-menu.h	\
 	workspace.h
 
-libwnckincludedir = $(includedir)/libwnck-3.0/libwnck
+libwnckincludedir = $(includedir)/libwnck-4.0/libwnck
 libwnckinclude_HEADERS =		\
 	$(wnck_headers)			\
 	wnck-enum-types.h \
@@ -72,7 +72,7 @@ wnck_accessibility_files =			\
 	workspace-accessible-factory.c		\
 	workspace-accessible-factory.h
 
-libwnck_3_la_SOURCES = 		\
+libwnck_4_la_SOURCES = 		\
 	$(BUILT_SOURCES) \
 	$(wnck_sources)		\
 	private.h		\
@@ -82,19 +82,19 @@ libwnck_3_la_SOURCES = 		\
 	wnck-image-menu-item-private.h \
 	$(wnck_accessibility_files)
 
-libwnck_3_la_CPPFLAGS =			\
+libwnck_4_la_CPPFLAGS =			\
 	$(AM_CPPFLAGS)			\
 	$(XLIB_CFLAGS)			\
 	-DG_LOG_DOMAIN=\"Wnck\"		\
 	-DWNCK_COMPILATION		\
 	-DSN_API_NOT_YET_FROZEN=1
 
-libwnck_3_la_LIBADD =	\
+libwnck_4_la_LIBADD =	\
 	$(LIBWNCK_LIBS)	\
 	$(XLIB_LIBS)	\
 	$(LIBM)
 
-libwnck_3_la_LDFLAGS =								\
+libwnck_4_la_LDFLAGS =								\
 	-version-info $(LIBWNCK_CURRENT):$(LIBWNCK_REVISION):$(LIBWNCK_AGE)	\
 	-no-undefined								\
 	-export-symbols-regex "^[^_].*" \
@@ -179,13 +179,13 @@ INTROSPECTION_COMPILER_ARGS = --includedir=$(srcdir)
 if HAVE_INTROSPECTION
 introspection_sources = $(wnck_sources) $(libwnckinclude_HEADERS)
 
-Wnck-3.0.gir: libwnck-3.la
-Wnck_3_0_gir_INCLUDES = GObject-2.0 GdkPixbuf-2.0 Gtk-3.0
-Wnck_3_0_gir_CFLAGS = $(libwnck_3_la_CPPFLAGS)
-Wnck_3_0_gir_LIBS = libwnck-3.la
-Wnck_3_0_gir_SCANNERFLAGS = --pkg-export=libwnck-3.0 $(WARN_SCANNERFLAGS)
-Wnck_3_0_gir_FILES = $(introspection_sources)
-INTROSPECTION_GIRS += Wnck-3.0.gir
+Wnck-4.0.gir: libwnck-4.la
+Wnck_4_0_gir_INCLUDES = GObject-2.0 GdkPixbuf-2.0 Gtk-4.0
+Wnck_4_0_gir_CFLAGS = $(libwnck_4_la_CPPFLAGS)
+Wnck_4_0_gir_LIBS = libwnck-4.la
+Wnck_4_0_gir_SCANNERFLAGS = --pkg-export=libwnck-4.0 $(WARN_SCANNERFLAGS)
+Wnck_4_0_gir_FILES = $(introspection_sources)
+INTROSPECTION_GIRS += Wnck-4.0.gir
 
 girdir = $(INTROSPECTION_GIRDIR)
 gir_DATA = $(INTROSPECTION_GIRS)
